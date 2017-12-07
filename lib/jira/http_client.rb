@@ -49,8 +49,8 @@ module JIRA
       elsif ENV["http_proxy"]
         proxy_uri = URI.parse(ENV["http_proxy"])
         http_class = Net::HTTP::Proxy(proxy_uri.host, proxy_uri.port, proxy_uri.user, proxy_uri.password)
-        print uri.to_s
-        print proxy_uri.to_s
+        print uri.to_s + "\n"
+        print proxy_uri.to_s + "\n"
       else
         http_class = Net::HTTP
       end

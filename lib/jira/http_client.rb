@@ -47,7 +47,7 @@ module JIRA
         proxy_uri = URI.parse(@options[:proxy_address])
         http_class = Net::HTTP::Proxy(proxy_uri.host, proxy_uri.port, proxy_uri.user, proxy_uri.password)
       elsif ENV["http_proxy"]
-        proxy_uri = URI.parse(ENV[:proxy_address])
+        proxy_uri = URI.parse(ENV["http_proxy"])
         http_class = Net::HTTP::Proxy(proxy_uri.host, proxy_uri.port, proxy_uri.user, proxy_uri.password)
       else
         http_class = Net::HTTP

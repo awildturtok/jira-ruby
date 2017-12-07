@@ -46,6 +46,7 @@ module JIRA
       if @options[:proxy_address]
         proxy_uri = URI.parse(@options[:proxy_address])
         http_class = Net::HTTP::Proxy(proxy_uri.host, proxy_uri.port, proxy_uri.user, proxy_uri.password)
+        
       else
         http_class = Net::HTTP
       end
